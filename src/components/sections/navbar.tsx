@@ -37,7 +37,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/75 backdrop-blur-lg">
       <div className="mx-auto flex h-19 max-w-6xl items-center justify-between gap-4 px-6">
-        <Link href="#top" className="flex shrink-0 items-center gap-2.5 text-preset-3 text-foreground">
+        <Link href="/" className="flex shrink-0 items-center gap-2.5 text-preset-3 text-foreground">
           <Logo />
           {nav.logoLabel}
         </Link>

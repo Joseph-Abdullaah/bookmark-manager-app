@@ -12,7 +12,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-wrap justify-between gap-12 pb-12">
           <div className="max-w-70">
-            <Link href="#top" className="flex items-center gap-2.5 text-preset-3 text-foreground">
+            <Link href="/" className="flex items-center gap-2.5 text-preset-3 text-foreground">
               <Logo />
               {nav.logoLabel}
             </Link>
