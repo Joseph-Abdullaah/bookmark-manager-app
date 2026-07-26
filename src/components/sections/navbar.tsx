@@ -62,7 +62,7 @@ export function Navbar() {
           >
             {nav.loginLabel}
           </Link>
-          <Button size="lg" className="rounded-xl" render={<Link href={nav.ctaHref} />}>
+          <Button size="lg" className="rounded-xl" nativeButton={false} render={<Link href={nav.ctaHref} />}>
             {nav.ctaLabel}
           </Button>
         </div>
@@ -103,6 +103,7 @@ export function Navbar() {
           <Button
             size="lg"
             className="mt-2 w-full rounded-xl"
+            nativeButton={false}
             render={<Link href={nav.ctaHref} onClick={() => setMenuOpen(false)} />}
           >
             {nav.ctaLabel}

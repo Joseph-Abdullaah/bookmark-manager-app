@@ -19,6 +19,7 @@ export function Cta() {
         <Button
           size="lg"
           className="mt-9 h-13 rounded-xl bg-background px-8 text-base text-foreground hover:bg-background/90"
+          nativeButton={false}
           render={<Link href={cta.ctaHref} />}
         >
           {cta.ctaLabel}

@@ -22,13 +22,19 @@ export function Hero() {
             {hero.description}
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
-            <Button size="lg" className="h-13 rounded-xl px-7 text-base" render={<Link href={hero.primaryCta.href} />}>
+            <Button
+              size="lg"
+              className="h-13 rounded-xl px-7 text-base"
+              nativeButton={false}
+              render={<Link href={hero.primaryCta.href} />}
+            >
               {hero.primaryCta.label}
             </Button>
             <Button
               variant="outline"
               size="lg"
               className="h-13 rounded-xl px-7 text-base"
+              nativeButton={false}
               render={<Link href={hero.secondaryCta.href} />}
             >
               {hero.secondaryCta.label}
