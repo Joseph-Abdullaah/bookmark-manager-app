@@ -1,6 +1,6 @@
 import { betterAuth } from "better-auth"
 import { prismaAdapter } from "better-auth/adapters/prisma"
-import { prisma } from "./prisma"
+import { prisma } from "@/lib/prisma"
 import { Resend } from "resend"
 import { PasswordReset } from "@/components/email/password-reset"
 import { EmailVerification } from "@/components/email/email-verification"
@@ -13,7 +13,7 @@ export const auth = betterAuth({
   }),
   emailVerification: {
     sendVerificationEmail: async ({ user, url }) => {
-      await resend.emails.send({
+      void resend.emails.send({
         from: "Bookmark Manager <onboarding@resend.dev>",
         to: user.email,
         subject: "Verify your email",
@@ -24,9 +24,10 @@ export const auth = betterAuth({
   },
   emailAndPassword: {
     enabled: true,
+    requireEmailVerification: true,
     resetPasswordTokenExpiresIn: 30 * 60, // 30 minutes
     sendResetPassword: async ({ user, url }) => {
-      await resend.emails.send({
+      void resend.emails.send({
         from: "Bookmark Manager <onboarding@resend.dev>",
         to: user.email,
         subject: "Reset your password",
