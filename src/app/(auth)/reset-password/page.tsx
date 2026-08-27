@@ -1,11 +1,16 @@
-import { ResetForm } from "@/components/reset-form";
+import { Suspense } from "react"
+import { ResetForm } from "@/components/reset-form"
 
-export default function ResetPasswordPage(){
-    return (
-        <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
-          <div className="w-full max-w-md">
-            <ResetForm />
-          </div>
-        </div>
-    )
+export default function ResetPasswordPage() {
+  return (
+    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
+      <div className="w-full max-w-md">
+        <Suspense
+          fallback={<div className="text-muted-foreground">Loading...</div>}
+        >
+          <ResetForm />
+        </Suspense>
+      </div>
+    </div>
+  )
 }
