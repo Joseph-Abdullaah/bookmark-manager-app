@@ -55,10 +55,10 @@ export function SignInForm() {
 
     if (error) {
       setAuthError(error.message ?? "Invalid email or password.")
+      return
     }
 
-    console.log("Signed in successfully.")
-    router.push("/dashboard")
+    router.push("/home")
   }
 
   async function handleGoogleSignIn() {
@@ -66,7 +66,7 @@ export function SignInForm() {
 
     const { error } = await authClient.signIn.social({
       provider: "google",
-      callbackURL: "/dashboard",
+      callbackURL: "/home",
     })
 
     if (error) {
