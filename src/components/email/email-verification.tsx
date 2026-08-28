@@ -1,59 +1,31 @@
-import {
-  Body,
-  Button,
-  Container,
-  Head,
-  Html,
-  Preview,
-  Section,
-  Tailwind,
-  Text,
-} from "react-email"
+import { Section, Text } from "react-email"
 
-import { createEmailTailwindConfig } from "@/components/email/email-theme"
-import { defaultTheme } from "@/components/email/theme-default"
+import { EmailButton } from "@/components/email/email-button"
+import { EmailShell } from "@/components/email/email-shell"
 
 interface Props {
   verifyHref?: string
   email?: string
 }
 
-export const EmailVerification = ({ verifyHref = "#", email }: Props) => {
-  const t = defaultTheme
+export const EmailVerification = ({ verifyHref = "#", email }: Props) => (
+  <EmailShell preview="Verify your email for Bookmark Manager">
+    <Section className="py-12">
+      <Text className="font-20 text-fg mb-6">
+        {email ? `Verify your email for ${email}` : "Verify your email"}
+      </Text>
+      <Text className="font-16 text-fg-2 mb-6">
+        Thanks for signing up for Bookmark Manager. Click the button below to
+        verify your email address.
+      </Text>
+    </Section>
 
-  return (
-    <Html>
-      <Head />
-      <Preview>Verify your email for Bookmark Manager</Preview>
-      <Tailwind config={createEmailTailwindConfig(t)}>
-        <Body className="bg-background font-sans">
-          <Container className="max-w-container mx-auto p-8">
-            <Section className="py-12">
-              <Text className="mb-6 text-xl font-medium text-foreground">
-                Verify your email {email}
-              </Text>
-              <Text className="text-foreground-muted mb-6 text-base leading-snug">
-                Thanks for signing up for Bookmark Manager. Click the button
-                below to verify your email address.
-              </Text>
-            </Section>
+    <Section className="py-12">
+      <EmailButton href={verifyHref} label="Verify email" size="md" />
+    </Section>
 
-            <Section className="py-12">
-              <Button
-                href={verifyHref}
-                className="text-primary-fg inline-block rounded-md bg-primary px-6 py-3 text-sm font-medium no-underline"
-              >
-                Verify email
-              </Button>
-            </Section>
-
-            <Text className="text-foreground-muted mt-8 text-sm">
-              If you didn&apos;t create an account, you can safely ignore this
-              email.
-            </Text>
-          </Container>
-        </Body>
-      </Tailwind>
-    </Html>
-  )
-}
+    <Text className="font-13 text-fg-3 mt-8">
+      If you didn&apos;t create an account, you can safely ignore this email.
+    </Text>
+  </EmailShell>
+)
