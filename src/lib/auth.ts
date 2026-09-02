@@ -35,6 +35,10 @@ export const auth = betterAuth({
       })
     },
   },
+  session: {
+    // Skip the database on most requests; revocation lags by at most a minute.
+    cookieCache: { enabled: true, maxAge: 60 },
+  },
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID!,
