@@ -1,11 +1,15 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import { Geist_Mono, Manrope } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
+import { Toaster } from "@/components/ui/toast"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const fontSans = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
@@ -25,12 +29,15 @@ export default function RootLayout({
         "antialiased",
         fontMono.variable,
         "font-sans",
-        inter.variable
+        fontSans.variable
       )}
     >
       <body>
         <TooltipProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            {children}
+            <Toaster />
+          </ThemeProvider>
         </TooltipProvider>
       </body>
     </html>
