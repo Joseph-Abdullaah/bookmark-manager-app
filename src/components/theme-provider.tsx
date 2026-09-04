@@ -7,12 +7,22 @@ function ThemeProvider({
   children,
   ...props
 }: React.ComponentProps<typeof NextThemesProvider>) {
+  // next-themes renders an inline <script> to prevent theme flash on load.
+  // React 19 warns against client-rendered script tags, so on the client we
+  // mark it as a data block ("application/json") to keep it inert. The SSR
+  // copy (rendered without this type) still runs normally before hydration.
+  const scriptProps =
+    typeof window === "undefined"
+      ? undefined
+      : { type: "application/json" }
+
   return (
     <NextThemesProvider
       attribute="class"
       defaultTheme="system"
       enableSystem
       disableTransitionOnChange
+      scriptProps={scriptProps}
       {...props}
     >
       <ThemeHotkey />
