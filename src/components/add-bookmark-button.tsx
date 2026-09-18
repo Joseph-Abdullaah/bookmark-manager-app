@@ -1,19 +1,30 @@
 "use client"
 
 import { Plus } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import type * as React from "react"
 
-export function AddBookmarkButton() {
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+
+export function AddBookmarkButton({
+  className,
+  ...props
+}: React.ComponentProps<typeof Button>) {
   return (
     <Button
-      className="text-preset-3! cursor-pointer rounded-lg text-primary-foreground!"
+      type="button"
+      className={cn(
+        "text-preset-3! cursor-pointer rounded-lg text-primary-foreground!",
+        className
+      )}
       size="lg"
+      {...props}
     >
       <div className="block md:hidden">
-        <Plus size="lg" />
+        <Plus className="size-5" />
       </div>
       <div className="hidden items-center gap-1 md:flex">
-        <Plus size="lg" />
+        <Plus className="size-5" />
         <span>Add Bookmark</span>
       </div>
     </Button>
