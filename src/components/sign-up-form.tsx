@@ -76,7 +76,7 @@ export function SignUpForm({ ...props }: React.ComponentProps<typeof Card>) {
 
     const { error } = await authClient.signIn.social({
       provider: "google",
-      callbackURL: "/dashboard",
+      callbackURL: "/home",
     })
 
     if (error) {
