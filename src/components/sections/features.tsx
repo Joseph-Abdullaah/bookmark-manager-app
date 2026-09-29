@@ -5,8 +5,8 @@ import { lucideIconMap } from "@/lib/lucide-icon-map"
 
 export function Features() {
   return (
-    <section id="features" className="px-6 py-24">
-      <div className="mx-auto max-w-6xl">
+    <section id="features" className="py-24">
+      <div className="mx-auto max-w-5xl px-6">
         <Reveal className="mx-auto mb-16 max-w-xl text-center">
           <p className="text-preset-5 mb-4 tracking-wide text-primary uppercase">
             {features.eyebrow}
