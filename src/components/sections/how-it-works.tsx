@@ -4,8 +4,8 @@ import { lucideIconMap } from "@/lib/lucide-icon-map"
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="px-6 py-24">
-      <div className="mx-auto max-w-6xl">
+    <section id="how-it-works" className="py-24">
+      <div className="mx-auto max-w-5xl px-6">
         <Reveal className="mx-auto mb-18 max-w-xl text-center">
           <p className="text-preset-5 mb-4 tracking-wide text-primary uppercase">
             {howItWorks.eyebrow}
