@@ -42,8 +42,8 @@ const DETAIL_PREVIEWS = [SidebarPreview, BookmarkCardPreview, SearchBarPreview]
 
 export function Showcase() {
   return (
-    <section id="showcase" className="bg-muted/40 px-6 py-24">
-      <div className="mx-auto max-w-4xl">
+    <section id="showcase" className="bg-muted/40 py-24">
+      <div className="mx-auto max-w-5xl px-6">
         <Reveal className="mx-auto mb-14 max-w-xl text-center">
           <p className="text-preset-5 mb-4 tracking-wide text-primary uppercase">
             {showcase.eyebrow}
