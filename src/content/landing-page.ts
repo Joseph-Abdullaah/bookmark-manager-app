@@ -21,17 +21,17 @@ export const nav = {
     { label: "FAQ", href: "#faq" },
   ],
   loginLabel: "Log in",
-  loginHref: "/login",
+  loginHref: "/sign-in",
   ctaLabel: "Get Started",
-  ctaHref: "/register",
+  ctaHref: "/sign-up",
 }
 
 export const hero = {
   title: ["Every bookmark.", "Perfectly organized."],
   description:
     "Save, tag, and search every link you find. Bookmark Manager keeps your whole web in one clean, fast workspace — built for people who save a lot and lose nothing.",
-  primaryCta: { label: "Get Started Free", href: "/register" },
-  secondaryCta: { label: "See how it works", href: "#how-it-works" },
+  primaryCta: { label: "Get Started Free", href: "/sign-up" },
+  secondaryCta: { label: "Try the Demo", href: "/demo" },
   browserUrl: "app.bookmarkmanager.io/home",
 }
 
@@ -89,17 +89,6 @@ export const features = {
       description:
         "A carefully tuned dark theme that’s easy on the eyes, day or night.",
     },
-    {
-      icon: "BarChart3" as LucideIconName,
-      title: "Usage Insights",
-      description: "See what you actually open, so you can prune what you don’t.",
-    },
-    {
-      icon: "Laptop" as LucideIconName,
-      title: "Available Everywhere",
-      description:
-        "A responsive workspace that feels just as sharp on a laptop or a tablet.",
-    },
   ],
 }
 
@@ -111,7 +100,10 @@ export const showcase = {
   callouts: [
     { text: "Organize with tags & folders", position: "top-left" as const },
     { text: "Search finds it instantly", position: "top-right" as const },
-    { text: "Pin, edit, or archive in one click", position: "bottom-right" as const },
+    {
+      text: "Pin, edit, or archive in one click",
+      position: "bottom-right" as const,
+    },
   ],
   details: [
     {
@@ -122,12 +114,14 @@ export const showcase = {
     {
       icon: "Bookmark" as LucideIconName,
       title: "Rich bookmark cards",
-      description: "Titles, favicons, and notes at a glance for every saved link.",
+      description:
+        "Titles, favicons, and notes at a glance for every saved link.",
     },
     {
       icon: "Search" as LucideIconName,
       title: "Search & quick actions",
-      description: "Filter, pin, or archive links without leaving the search bar.",
+      description:
+        "Filter, pin, or archive links without leaving the search bar.",
     },
   ],
 }
@@ -152,7 +146,8 @@ export const howItWorks = {
       step: "Step 3",
       icon: "Tag" as LucideIconName,
       title: "Tag",
-      description: "Add tags for the cross-cutting stuff — project, priority, type.",
+      description:
+        "Add tags for the cross-cutting stuff — project, priority, type.",
     },
     {
       step: "Step 4",
@@ -231,7 +226,7 @@ export const cta = {
   description:
     "Join a workspace built for people who save a lot — and actually want to find it again.",
   ctaLabel: "Get Started Free",
-  ctaHref: "/register",
+  ctaHref: "/sign-in",
 }
 
 export const footer = {
