@@ -1,18 +1,14 @@
 import type { Metadata } from "next"
 
-import { Navbar } from "@/components/sections/navbar"
-import { Hero } from "@/components/sections/hero"
-import { Compatibility } from "@/components/sections/compatibility"
+import { HeroSection } from "@/components/sections/hero-section"
 import { Problem } from "@/components/sections/problem"
 import { Features } from "@/components/sections/features"
 import { Showcase } from "@/components/sections/showcase"
 import { HowItWorks } from "@/components/sections/how-it-works"
-import { Appearance } from "@/components/sections/appearance"
-import { Testimonials } from "@/components/sections/testimonials"
-import { Faq } from "@/components/sections/faq"
-import { Cta } from "@/components/sections/cta"
-import { Footer } from "@/components/sections/footer"
-
+import { Testimonials } from "@/components/sections/testimonial-section"
+import { Faq } from "@/components/sections/faq-section"
+import { Cta } from "@/components/sections/cta-section"
+import { Footer } from "@/components/sections/footer-section"
 export const metadata: Metadata = {
   title: "Bookmark Manager — Every bookmark, perfectly organized",
   description:
@@ -22,19 +18,14 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="flex min-h-svh flex-col">
-      <Navbar />
-      <main>
-        <Hero />
-        <Compatibility />
-        <Problem />
-        <Features />
-        <Showcase />
-        <HowItWorks />
-        <Appearance />
-        <Testimonials />
-        <Faq />
-        <Cta />
-      </main>
+      <HeroSection />
+      <Problem />
+      <Features />
+      <Showcase />
+      <HowItWorks />
+      <Testimonials />
+      <Faq />
+      <Cta />
       <Footer />
     </div>
   )
